@@ -44,8 +44,10 @@ export default {
       const { allWidth, dom } = this
 
       const currentWidth = document.body.clientWidth
+      const currentHeight = document.body.clientHeight
+      const scale = Math.min(currentWidth / allWidth, currentHeight / height)
 
-      dom.style.transform = `scale(${currentWidth / allWidth})`
+      dom.style.transform = `scale(${scale})`
     },
     onResize () {
       const { setAppScale } = this
